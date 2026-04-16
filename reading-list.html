@@ -1,0 +1,61 @@
+<html>
+<title>Reading List - Dhairya Khale</title>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="books.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Dhairya Khale</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">About</a></li>
+                <li><a href="reading-list.html" class="nav-link active">Reading List</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>My Reading List</h2>
+            <p>A constant struggle to reduce screen time and develop patience</p>
+        </section>
+
+        <section class="reading-list-content">
+            <div class="kanban-board">
+                <!-- Want to Read Column -->
+                <div class="kanban-column">
+                    <div class="column-header want-to-read">Want to Read</div>
+                    <div class="books-column" id="want-to-read-books">
+                    </div>
+                </div>
+
+                <!-- In Progress Column -->
+                <div class="kanban-column">
+                    <div class="column-header in-progress">In Progress</div>
+                    <div class="books-column" id="in-progress-books">
+                    </div>
+                </div>
+
+                <!-- Completed Column -->
+                <div class="kanban-column">
+                    <div class="column-header done-reading">Completed</div>
+                    <div class="books-column" id="completed-books">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dhairya Khale. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

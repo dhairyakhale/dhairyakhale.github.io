@@ -1,5 +1,599 @@
-marquee {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: black;
-    color: whitesmoke;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.nav-link.active {
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.2rem;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: #ffffff;
+    color: #000;
+    border-radius: 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+}
+
+.social-icon:hover {
+    background-color: #f59e0b;
+    color: #000;
+    border-color: #f59e0b;
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e8e8e8;
+}
+
+.about-content h2 {
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.about-content h3 {
+    color: #000;
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 500;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.about-content li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #999;
+}
+
+.about-content a {
+    color: #f59e0b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-content a:hover {
+    color: #fbbf24;
+    border-bottom-color: #bbb;
+}
+
+/* Reading List Section */
+.reading-list-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e8e8e8;
+}
+
+/* Kanban Board */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.kanban-column {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    border: 1px solid #e8e8e8;
+}
+
+.column-header {
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #000;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    letter-spacing: 0.3px;
+}
+
+.column-header.want-to-read {
+    background-color: #ef4444;
+    border-bottom-color: #ef4444;
+    color: #fff;
+}
+
+.column-header.in-progress {
+    background-color: #eab308;
+    border-bottom-color: #eab308;
+    color: #000;
+}
+
+.column-header.done-reading {
+    background-color: #22c55e;
+    border-bottom-color: #22c55e;
+    color: #fff;
+}
+
+.books-column {
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.books-column .book-card {
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 0;
+    border-left: 2px solid #ddd;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    cursor: grab;
+    transition: box-shadow 0.2s ease;
+}
+
+.books-column .book-card:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.book-card {
+    position: relative;
+}
+
+.book-card h3 {
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    padding-right: 50px;
+    word-wrap: break-word;
+    font-weight: 500;
+}
+
+.book-card h3 a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.book-card h3 a:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+}
+
+.book-card .author {
+    color: #777;
+    font-style: normal;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.genre-label {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+.genre-label.fiction {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.genre-label.nonfiction {
+    background-color: #8b5cf6;
+    color: #fff;
+}
+
+.language-label {
+    position: absolute;
+    top: 2.4rem;
+    right: 1rem;
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    background-color: #10b981;
+    color: #fff;
+}
+
+.search-link {
+    display: inline-block;
+    color: #f59e0b;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e8e8e8;
+    width: 100%;
+    transition: color 0.2s ease;
+}
+
+.search-link:hover {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+.opinion {
+    color: #777;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-top: 0.75rem;
+    font-style: normal;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.rating-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.stars {
+    color: #ffb800;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+}
+
+.rating-value {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 3rem;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .kanban-board {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .kanban-column {
+        min-height: auto;
+    }
+
+    .books-column {
+        max-height: 300px;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f0f0f;
+        color: #e0e0e0;
+    }
+
+    .navbar {
+        background-color: #1a1a1a;
+        border-bottom-color: #333;
+    }
+
+    .nav-brand {
+        color: #ffffff;
+    }
+
+    .nav-link {
+        color: #999;
+    }
+
+    .nav-link:hover {
+        color: #ffffff;
+    }
+
+    .nav-link.active {
+        color: #ffffff;
+        border-bottom-color: #ffffff;
+    }
+
+    .hero {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border-bottom-color: #333;
+    }
+
+    .hero h1 {
+        color: #ffffff;
+    }
+
+    .hero p {
+        color: #999;
+    }
+
+    .kanban-column {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+
+    .column-header {
+        background-color: #252525;
+        border-bottom-color: #333;
+        color: #e0e0e0;
+    }
+
+    .books-column .book-card {
+        background-color: #242424;
+        border-left-color: #444;
+    }
+
+    .books-column .book-card:hover {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .book-card h3 {
+        color: #ffffff;
+    }
+
+    .book-card h3 a {
+        color: #ffffff;
+    }
+
+    .book-card h3 a:hover {
+        color: #fbbf24;
+    }
+
+    .book-card .author {
+        color: #999;
+    }
+
+    .search-link {
+        color: #f59e0b;
+        border-bottom-color: #333;
+    }
+
+    .search-link:hover {
+        color: #fbbf24;
+    }
+
+    .about-content,
+    .reading-list-content {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+
+    .about-content h2,
+    .about-content h3 {
+        color: #ffffff;
+    }
+
+    .about-content p,
+    .about-content li {
+        color: #d0d0d0;
+    }
+
+    .about-content a {
+        color: #f59e0b;
+        border-bottom-color: #444;
+    }
+
+    .about-content a:hover {
+        color: #fbbf24;
+        border-bottom-color: #666;
+    }
+
+    .about-content li:before {
+        color: #444;
+    }
+
+    .opinion {
+        color: #999;
+    }
+
+    .rating-label {
+        color: #ffffff;
+    }
+
+    .rating-value {
+        color: #999;
+    }
+
+    .genre-label.fiction {
+        background-color: #c72c2c;
+        color: #fff;
+    }
+
+    .genre-label.nonfiction {
+        background-color: #6d28d9;
+        color: #fff;
+    }
+
+    .language-label {
+        background-color: #0d7d4a;
+        color: #fff;
+    }
+
+    .social-icon {
+        background-color: transparent;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+
+    .social-icon:hover {
+        background-color: #f59e0b;
+        color: #000;
+        border-color: #f59e0b;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #707070;
+    }
 }
